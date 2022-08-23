@@ -39,6 +39,15 @@ const sortByWealth = () => {
   updateDOM();
 };
 
+// Filters only the users who's wealth is over $1million
+const showMillionaires = () => {
+  data = data.filter((user) => {
+    return user.money >= 1000000;
+  });
+
+  updateDOM();
+};
+
 // Add object to data array
 const addData = (obj) => {
   data.push(obj);
@@ -71,3 +80,5 @@ addUserBtn.addEventListener("click", getRandomUser);
 doubleBtn.addEventListener("click", doubleMoney);
 
 sortBtn.addEventListener("click", sortByWealth);
+
+showMillionairesBtn.addEventListener("click", showMillionaires);
